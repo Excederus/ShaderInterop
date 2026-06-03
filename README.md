@@ -10,6 +10,18 @@ This documentation will show examples for each tag for both sides. Some tags may
 
 # General
 
+## Parent/Child tags
+
+Most tags will be in a parent/child relationship `foliage/leaves` where parent tags will always include every entry from their childs.
+
+So the tag `foliage` will include all block IDs from these childs:
+- `foliage/leaves`
+- `foliage/grass`
+- `foliage/saplings`
+- ...
+
+This could be useful if a shader decides to base light color on texture color, in which case they can use the combined tag `emissive/light:color` to get all colored lights.
+
 ## Filename (YAML)
 
 The filename has to contain the tag category and modid/namespace.
