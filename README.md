@@ -60,6 +60,18 @@ So the end result will be:
 - Regions Unexplored: External (modpack)
 - Oh The Biomes We've Gone: Bundled
 
+## Arbitrary/User-defined tags
+
+These will be ignored. This mod will provide a shader-centric tag system that shader developers can rely on.
+
+Arbitrary/User-defined tags like this are not reliable and impossible for shader developers to know so will be ignored:
+
+```
+fancy:
+  blob:
+    - bouncing_blob
+```
+
 <hr>
 
 # Available Tags (subject to change - not a complete list)
