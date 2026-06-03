@@ -2,7 +2,7 @@
 
 This will explain how Shader/Mod/Modpack Developers can interact with this mod to add easier Mod~Shader cross-compatibility.
 
-Shaderpacks will use IRIS_TAG_SUPPORT to add the block/item/entity tags provided by this mod to their block/item/entity properties files. Mods/Modpacks will use easy to write yaml/yml files to assign their blocks/items/entities to these tags.
+Shaderpacks will use IRIS_TAG_SUPPORT to add the block/item/entity tags provided by this mod to their block/item/entity properties files. Mods/Modpacks will use easy to write yaml/yml files inside `assets/namespace/shaderinterop` (for mods) and `config/shaderinterop` (for modpacks) to assign their blocks/items/entities to these tags.
 
 This documentation will show examples for each tag for both sides. Some tags may already exist in vanilla or modded environments. This is not a showcase of new tags, but a proof of concept what could be possible with a shader-focused tag system instead of a gameplay-focused one.
 
@@ -37,6 +37,28 @@ foliage:
 ```
 
 In this example `oak_leaves` will be added to the `block` tag `foliage/leaves` and changed to `minecraft:oak_leaves` using the modid/namespace in the filename when added to the tag so it properly references the mod that ID came from.
+
+## Patch priority
+
+To provide accurate tags and prevent duplication patches from different sources will be prioritized differently. (**No merging of different source patches will ever happen**)
+
+- Patches bundled with the mod will have the lowest priority and can be overwritten by internal (mod) patches and external (modpack) patches.
+- Internal (mod) patches have the second highest priority and overwrite bundled patches and can be overwritten by external (modpack) patches.
+- External (modpack) patches have the highest priority and overwrite both bundled and internal (mod) patches.
+
+Lets take Biomes O Plenty, Regions Unexplored and Oh The Biomes We've Gone as an example.
+
+ShaderInterop comes bundled with patches for both.
+
+Biomes O Plenty provides direct support for ShaderInterop and provides patches. These will overwrite matching bundled patches (block/item/entity).
+
+A modpack provides patches Regions Unexplored. These will overwrite matching bundled and internal patches.
+
+So the end result will be:
+
+- Biomes O Plenty: Internal (mod)
+- Regions Unexplored: External (modpack)
+- Oh The Biomes We've Gone (bundled)
 
 <hr>
 
