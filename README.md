@@ -52,13 +52,13 @@ ShaderInterop comes bundled with patches for all three.
 
 Biomes O Plenty provides direct support for ShaderInterop and provides patches. These will overwrite matching bundled patches (block/item/entity).
 
-A modpack provides patches Regions Unexplored. These will overwrite matching bundled and internal patches.
+A modpack provides patches for Regions Unexplored. These will overwrite matching bundled and internal patches.
 
 So the end result will be:
 
 - Biomes O Plenty: Internal (mod)
 - Regions Unexplored: External (modpack)
-- Oh The Biomes We've Gone (bundled)
+- Oh The Biomes We've Gone: Bundled
 
 <hr>
 
