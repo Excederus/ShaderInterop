@@ -48,7 +48,7 @@ To provide accurate tags and prevent duplication patches from different sources 
 
 Lets take Biomes O Plenty, Regions Unexplored and Oh The Biomes We've Gone as an example.
 
-ShaderInterop comes bundled with patches for both.
+ShaderInterop comes bundled with patches for all three.
 
 Biomes O Plenty provides direct support for ShaderInterop and provides patches. These will overwrite matching bundled patches (block/item/entity).
 
